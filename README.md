@@ -3,6 +3,7 @@
 
 [Riddle--](https://github.com/Offblink/Riddle--) 的进化版。与 Riddle-- 的单 HTML 文件不同，Riddle++ 采用**多文件架构**：JS 模块各司其职，CSS 独立，全局命名空间加载。零构建，双击即开。
 
+> **为什么不是取代 Riddle--？** 不同的需求需要不同的产品。Riddle-- 轻量、极致简洁，适合纯文字手写日记；Riddle++ 加入了识图和 AI 绘图，适合想要更丰富交互的用户。两者并存，各取所需。
 ## 与 riddle / Riddle-- 的差异
 
 | | **riddle（原版）** | **Riddle--** | **Riddle++** |
