@@ -3,9 +3,6 @@
 
 [Riddle--](https://github.com/Offblink/Riddle--) 的进化版。与 Riddle-- 的单 HTML 文件不同，Riddle++ 采用**多文件架构**：JS 模块各司其职，CSS 独立，全局命名空间加载。零构建，双击即开。
 
-> 如果你在用更简洁的文字版：[Riddle--](https://github.com/Offblink/Riddle--) | 架构说明见[项目结构](#项目结构)
-
-
 ## 与 riddle / Riddle-- 的差异
 
 | | **riddle（原版）** | **Riddle--** | **Riddle++** |
