@@ -29,17 +29,6 @@ cp config.example.js config.js   # 填入 API Key
 - **文字回复**：DeepSeek API Key（免费注册）
 - **识图 + 生图**：OpenAI API Key（GPT-4o + DALL·E 3），或任何 OpenAI 兼容 Vision API
 
-### 无 Key 测试
-
-```bash
-python mock-server.py           # 启动 mock API（8092 端口）
-```
-
-然后在设置→图像 tab 填：
-- Vision API Base URL: `http://localhost:8092`
-- Image Gen API Base URL: `http://localhost:8092`
-- API Key 随便填，切到 🎨 始终生图即可验证全流程。
-
 ## 模式
 
 | 模式 | 行为 |
@@ -99,7 +88,6 @@ Riddle++/
 - [riddle](https://github.com/MaximeRivest/riddle) — 原版 e-ink 手写日记，Tom Riddle 的日记本
 - [Riddle--](https://github.com/Offblink/Riddle--) — 浏览器重生版，本项目的直接前辈
 - [handwriting.js](https://github.com/ChenYuHo/handwriting.js) — Google IME 手写识别
-- [Monocraft](https://github.com/IdreesInc/Monocraft) — UI 字体
 
 ## 许可证
 
