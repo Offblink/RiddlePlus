@@ -84,7 +84,6 @@ Riddle++/
 
 ## 致谢
 - [riddle](https://github.com/MaximeRivest/riddle) — 原版 e-ink 手写日记，Tom Riddle 的日记本
-- [Riddle--](https://github.com/Offblink/Riddle--) — 浏览器重生版，本项目的直接前辈
 - [handwriting.js](https://github.com/ChenYuHo/handwriting.js) — Google IME 手写识别
 - [Monocraft](https://github.com/IdreesInc/Monocraft) — UI 字体
 ## 许可证
