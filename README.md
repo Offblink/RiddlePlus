@@ -11,7 +11,7 @@
 | **平台** | reMarkable Paper Pro | 任何浏览器 | 任何浏览器 |
 | **语言** | Rust + C/C++ | 单 HTML + JS | 多文件 JS，全局命名空间 |
 | **显示** | e-ink 直驱 | Canvas | Canvas |
-| **笔输入** | evdev，4096 级压感 | Pointer events | Pointer events |
+| **笔输入** | evdev，4096 级压感 | Pointer events | Pointer events，支持 Apple Pencil / Wacom 等压感笔 |
 | **手写识别** | Vision LLM 读整页 PNG | Google IME 笔画 API | Google IME → 失败则 Vision LLM |
 | **识图** | 同上（Vision LLM） | 不支持 | Vision LLM（GPT-4o） |
 | **AI 绘图** | 不支持 | 不支持 | LLM 触发 DALL·E 3 → Otsu 二值化 |
@@ -42,9 +42,9 @@ cp config.example.js config.js   # 填入 API Key
 | 操作 | 效果 |
 |---|---|
 | 写字/画画，停笔 2.8s | 自动识别并回复 |
+| 压感笔书写 | 轻画细线，重压粗线（鼠标/触摸仍用速度控粗细） |
 | Ctrl+Z / ↩ | 撤销 |
 | ⚙ | 设置面板（右侧滑出，画布自动缩窄） |
-| ▷ | 调试日志 |
 
 ## 设置面板
 
