@@ -5,18 +5,33 @@ function throwIfNoKey(key, name) {
   if (!key) throw new Error('请先在设置中填入 ' + name);
 }
 
-async function fetchJson(url, opts) {
-  var resp = await fetch(url, opts);
-  var text = await resp.text();
-  var data;
-  try { data = JSON.parse(text); } catch (e) { data = { _raw: text }; }
-  if (!resp.ok) {
-    var errMsg = data.error
-      ? (typeof data.error === 'string' ? data.error : (data.error.message || JSON.stringify(data.error)))
-      : text.slice(0, 200);
-    throw new Error('API 错误 (' + resp.status + '): ' + errMsg);
+async function fetchJson(url, opts, timeoutMs) {
+  timeoutMs = timeoutMs || 30000;
+  var controller = new AbortController();
+  var timer = setTimeout(function() {
+    controller.abort();
+  }, timeoutMs);
+
+  try {
+    var resp = await fetch(url, Object.assign({}, opts, { signal: controller.signal }));
+    clearTimeout(timer);
+    var text = await resp.text();
+    var data;
+    try { data = JSON.parse(text); } catch (e) { data = { _raw: text }; }
+    if (!resp.ok) {
+      var errMsg = data.error
+        ? (typeof data.error === 'string' ? data.error : (data.error.message || JSON.stringify(data.error)))
+        : text.slice(0, 200);
+      throw new Error('API 错误 (' + resp.status + '): ' + errMsg);
+    }
+    return data;
+  } catch (err) {
+    clearTimeout(timer);
+    if (err.name === 'AbortError') {
+      throw new Error('请求超时 (' + timeoutMs + 'ms)，请检查网络或 API 服务');
+    }
+    throw err;
   }
-  return data;
 }
 
 // Text LLM
