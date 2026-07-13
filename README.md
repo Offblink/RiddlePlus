@@ -55,7 +55,7 @@ cp config.example.js config.js   # 填入 API Key
 ### 图像 tab
 模式切换、Vision LLM（`/v1/chat/completions`，默认 GPT-4o）、AI 绘图（`/v1/images/generations`，默认 DALL·E 3）、图像预览（选本地图 → Otsu 二值化 → 显示在画布上）。
 
-> API 格式说明：所有接口遵循 OpenAI 兼容格式（通义千问、Moonshot、智谱等均适用）。Vision 使用标准 `image_url` 消息格式，生图使用标准 DALL·E `images/generations` 端点。
+> 💡 接口格式参考 OpenAI 文档设计，已通过 mock 测试。作者暂无 Key 实机验证，如有兼容性问题欢迎提 [Issue](https://github.com/Offblink/RiddlePlus/issues)。
 
 ## 二值化
 
@@ -76,7 +76,6 @@ Riddle++/
 │   ├── binarize.js      # Otsu 自适应二值化
 │   ├── animation.js     # 文字逐字 reveal、渐隐过渡
 │   └── settings.js      # 配置数据层 + 设置面板 DOM 绑定
-├── mock-server.py       # 测试用 mock API（无需 Key）
 ├── config.example.js
 ├── config.js            # 用户配置（gitignore）
 ├── Monocraft.ttf
