@@ -83,7 +83,7 @@ Riddle++/
 ```
 
 ## 致谢
-
+- [handwriting.js](https://github.com/ChenYuHo/handwriting.js) — Google IME 手写识别
 - [riddle](https://github.com/MaximeRivest/riddle) — 原版 e-ink 手写日记，Tom Riddle 的日记本
 
 ## 许可证
