@@ -107,10 +107,8 @@ function getPos(e) {
   var r = canvas.getBoundingClientRect();
   return { x: e.clientX - r.left, y: e.clientY - r.top, t: Date.now() };
 }
-
 canvas.addEventListener('pointerdown', function(e) {
-  if (state === S.ANIMATING || state === S.THINKING || state === S.VISION_ANALYZING || state === S.GENERATING_IMAGE) return;
-  e.preventDefault();
+  if (state === S.RECOGNIZING || state === S.ANIMATING || state === S.THINKING || state === S.VISION_ANALYZING || state === S.GENERATING_IMAGE) return;
   var p = getPos(e);
   activeStrokes[e.pointerId] = { xs: [p.x], ys: [p.y], ts: [p.t], lastPoint: p };
   clearIdleTimer();
